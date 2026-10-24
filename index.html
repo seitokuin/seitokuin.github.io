@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>お申込み・お問い合わせのご案内｜大晃山 聖徳院</title>
+<style>
+/* 外部ファイルを一切読み込まない設計（サーバー障害時でも単体で表示できるように） */
+:root{
+  --ai:#22375a;      /* 藍 */
+  --shu:#a8202a;     /* 朱（寺紋の赤） */
+  --asagi:#e3edf0;   /* 浅葱の淡色 */
+  --paper:#fbfbf9;
+  --ink:#1f2328;
+  --sub:#5a6170;
+  --line:#c9d3da;
+  --card:#ffffff;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --ai:#9db6dc; --shu:#e0646b; --asagi:#1c2733; --paper:#12171d;
+    --ink:#e7e9ec; --sub:#a4abb6; --line:#34404d; --card:#18202a;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo","Noto Sans JP",sans-serif;
+  font-size:17px;line-height:1.9;}
+.mincho{font-family:"Hiragino Mincho ProN","Yu Mincho","YuMincho","Noto Serif JP","MS PMincho",serif}
+a{color:var(--ai)}
+a:focus-visible{outline:3px solid var(--shu);outline-offset:2px}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+
+.hero{position:relative;color:#fff;border-top:6px solid #a8202a;
+  background:#22375a url("header.jpg") center 40%/cover no-repeat}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,22,40,.78) 0%,rgba(12,22,40,.5) 55%,rgba(12,22,40,.2) 100%)}
+.hero .wrap{position:relative;padding-top:72px;padding-bottom:56px}
+.hero .sect{color:rgba(255,255,255,.85);font-size:14px;margin:0}
+.hero h1{display:flex;align-items:center;gap:14px;color:#fff;font-size:34px;letter-spacing:.14em;margin:4px 0 10px;font-weight:700;text-shadow:0 1px 6px rgba(0,0,0,.4)}
+.mon{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;width:58px;height:58px;border-radius:50%;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+.mon img{width:44px;height:auto;display:block}
+.hero .lead{margin:0;font-size:16px;line-height:1.7;text-shadow:0 1px 4px rgba(0,0,0,.4)}
+.jump{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+.jump .wrap{display:flex;gap:8px;padding-top:10px;padding-bottom:10px;overflow-x:auto}
+.jump a{flex:0 0 auto;padding:6px 14px;border:1px solid var(--ai);border-radius:999px;text-decoration:none;font-size:15px;font-weight:600}
+.jump a:hover{background:var(--ai);color:var(--paper)}
+h2,.item{scroll-margin-top:64px}
+.notice{background:var(--asagi);border-left:5px solid var(--shu);padding:16px 18px;margin:28px 0 8px;border-radius:2px}
+.notice p{margin:0}
+.notice .date{font-size:14px;color:var(--sub);margin-top:6px}
+
+h2{font-size:22px;color:var(--ai);margin:48px 0 14px;padding-bottom:6px;border-bottom:2px solid var(--ai);letter-spacing:.06em}
+h3{font-size:18px;margin:0 0 6px}
+p{margin:0 0 1em}
+.small{font-size:15px;color:var(--sub)}
+
+/* 申込経路：実際に順序のある手段なので番号を使う */
+ol.route{list-style:none;padding:0;margin:0;counter-reset:r}
+ol.route>li{counter-increment:r;position:relative;padding:0 0 18px 52px}
+ol.route>li::before{content:counter(r);position:absolute;left:0;top:2px;width:36px;height:36px;border-radius:50%;
+  background:var(--ai);color:var(--paper);display:flex;align-items:center;justify-content:center;font-weight:700}
+
+.item{background:var(--card);border:1px solid var(--line);padding:18px 20px;margin:0 0 14px}
+.item .price{font-weight:700}
+.item ul{margin:.4em 0 .8em;padding-left:1.2em}
+.dl{display:inline-block;margin-top:4px;padding:10px 16px;border:2px solid var(--ai);color:var(--ai);
+  text-decoration:none;font-weight:700;border-radius:4px}
+.dl:hover{background:var(--ai);color:var(--paper)}
+.btn{display:inline-block;padding:10px 16px;background:var(--ai);color:var(--paper);text-decoration:none;font-weight:700;border-radius:4px;margin:2px 6px 6px 0}
+
+table.acct{border-collapse:collapse;width:100%;background:var(--card);margin:6px 0 10px}
+table.acct th,table.acct td{border:1px solid var(--line);padding:8px 12px;text-align:left;vertical-align:top}
+table.acct th{width:32%;background:var(--asagi);font-weight:600}
+.warn{border:2px solid var(--shu);padding:12px 16px;color:var(--ink);background:var(--card)}
+.warn strong{color:var(--shu)}
+
+dl.contact{display:grid;grid-template-columns:7em 1fr;gap:6px 12px;margin:0 0 16px}
+dl.contact dt{color:var(--sub)}
+dl.contact dd{margin:0}
+.tel{font-size:22px;font-weight:700;letter-spacing:.04em}
+.map{position:relative;width:100%;padding-top:62%;border:1px solid var(--line)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+footer{margin-top:56px;padding:24px 0 40px;border-top:1px solid var(--line);font-size:14px;color:var(--sub)}
+@media (max-width:480px){
+  body{font-size:16px} .hero h1{font-size:27px;gap:10px} .mon{width:48px;height:48px} .mon img{width:36px} .hero .wrap{padding-top:40px;padding-bottom:30px}
+  dl.contact{grid-template-columns:1fr} dl.contact dt{margin-top:6px}
+  table.acct th{width:38%}
+}
+.btn.off{background:var(--line);color:var(--sub);cursor:default}
+.way{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--ai);padding:18px 20px;margin:0 0 16px}
+.pay{display:grid;gap:10px;margin:10px 0 12px}
+.pay>div{background:var(--asagi);padding:12px 14px}
+h4{font-size:16px;margin:0 0 4px}
+.pay p{margin:0}
+@media (min-width:640px){.pay{grid-template-columns:1fr 1fr}}
+.cash-note{color:var(--shu);font-weight:700;margin-top:4px}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <!-- 背景写真は同じフォルダに header.jpg という名前で置いてください（横長・幅1600px程度・300KB以下が目安）。写真がなくても藍色で表示されます -->
+  <div class="wrap">
+    <p class="sect">金峯山修験本宗</p>
+    <h1 class="mincho"><span class="mon"><img src="mon.png" alt="" width="44" height="42"></span>大晃山 聖徳院</h1>
+    <p class="lead">塔婆供養・護摩木祈願・節分年間特別祈願の<br>お申込みのご案内</p>
+  </div>
+</header>
+<nav class="jump" aria-label="受付している祈願・供養">
+  <div class="wrap">
+    <a href="#toba">塔婆供養</a><a href="#goma">護摩木祈願</a><a href="#setsubun">節分年間特別祈願</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <!-- ▼ 実際に障害が起きた時は、この枠の文章を「現在ご利用いただけない状態です」に書き換えると伝わりやすくなります -->
+  <div class="notice" role="note">
+    <p>このページは、通信障害やシステムの不具合などにより、聖徳院のホームページやネット受付がご利用いただけない場合に備えて作成しております。そのような際は、こちらの方法でお申込み・お問い合わせください。</p>
+    <p class="date">最終更新：2026年10月</p>
+  </div>
+  <!-- ▲ ここまで -->
+
+  <h2 class="mincho">聖徳院について</h2>
+  <p>聖徳院は、苫小牧市植苗にある金峯山修験本宗の寺院です。護摩祈願、塔婆供養、節分の星祭りなどを通して、皆さまの祈りに寄り添っております。</p>
+
+  <h2 class="mincho">受付中の祈願・供養</h2>
+
+  <div class="item" id="toba">
+    <h3>塔婆供養</h3>
+    <p class="price">塔婆供養料　1本 3,000円</p>
+    <ul class="small">
+      <li>記入事項：施主のお名前（ふりがな）・ご住所・電話番号、供養する方のお名前（ふりがな）</li>
+      <li>お振込みの際は、施主名でお振込みください。</li>
+    </ul>
+    <a class="dl" href="toba.pdf" download>申込用紙（PDF）</a>
+  </div>
+
+  <div class="item" id="goma">
+    <h3>護摩木祈願（郵送）</h3>
+    <p class="price">護摩木　1本 300円　＋　郵送料 430円（レターパックライト）</p>
+    <ul class="small">
+      <li>ご入金確認後、未記入の護摩木をお送りします。ご記入のうえ護摩の日までに当院へお戻しください（返送の送料はご負担願います）。</li>
+      <li>1度のお申込みは30本までです。</li>
+      <li>お焚き上げは「次回の護摩」か「2月節分特別祈願」のどちらかをお選びください。節分用の受付は1月15日までです。</li>
+      <li>記入事項：郵送先のお名前・ご住所・電話番号、本数、お焚き上げの希望</li>
+    </ul>
+    <a class="dl" href="gomagi.pdf" download>申込用紙（PDF）</a>
+  </div>
+
+  <div class="item" id="setsubun">
+    <h3>節分・厄除け祈願（星祭り）年間特別祈願</h3>
+    <p class="price">年間特別祈願おふだ　一願 5,500円　／　烏枢沙摩明王のおふだ（トイレのおふだ）　1枚 1,000円</p>
+    <ul class="small">
+      <li>受付期間：12月1日〜1月31日（お振込みは2月1日まで）。準備の都合上、事前予約のみとさせていただいております。現金書留・寺院での直接受付・振込でのお申込みも、すべて1月31日必着です。</li>
+      <li>記入事項：代表者のお名前（フリガナ）・ご住所・電話番号、祈願される方ごとに「祈願内容・お名前（フリガナ）・ご住所・生年月日（和暦）」、おふだの郵送先、おふだの枚数</li>
+      <li>祈願内容の例：厄除け、家内安全、商売繁盛、交通安全、身体壮健、心願成就、闘病平穏、合格祈願など</li>
+      <li>お振込みは代表者名でお願いいたします。</li>
+      <li>護摩終了後、おふだを郵送いたします。受付順にお名前を記入いたしますので、正確にご記入ください。</li>
+    </ul>
+    <a class="dl" href="setsubun.pdf" download>申込用紙（PDF）</a>
+  </div>
+
+
+  <h2 class="mincho">お申込みの方法</h2>
+
+  <div class="way">
+    <h3>お寺で直接お申込み</h3>
+    <p>聖徳院へお越しいただき、その場でお申込みください。代金は現金でお納めいただけます。</p>
+    <!-- 受付時間が決まっていれば、ここに追記してください（例：受付時間 9時〜16時） -->
+    <p class="small">お越しの前にお電話いただけますと確実です。</p>
+  </div>
+
+  <div class="way">
+    <h3>郵送でお申込み</h3>
+    <p>申込用紙を印刷してご記入のうえ、聖徳院へお送りください。代金のお支払いは、次のどちらかをお選びいただけます。</p>
+    <div class="pay">
+      <div>
+        <h4>申込用紙を普通郵便で送り、代金は口座へお振込み</h4>
+        <p class="small">ポストに投函するだけでお申込みいただけます。振込先は下の「お振込み先」をご覧ください。</p>
+      </div>
+      <div>
+        <h4>申込用紙と代金を現金書留で送る</h4>
+        <p class="small">郵便局の窓口から、現金書留封筒に申込用紙と代金を同封してお送りください。</p>
+        <p class="small cash-note">※現金は普通郵便ではお送りいただけません。</p>
+      </div>
+    </div>
+    <p class="small">プリンターがない場合は、便箋などに申込用紙と同じ内容をお書きいただいても承ります。</p>
+  </div>
+
+  <h2 class="mincho">お振込み先</h2>
+  <table class="acct">
+    <tr><th>ゆうちょ銀行から</th><td>記号 19000　番号 24055731</td></tr>
+    <tr><th>他の銀行から</th><td>ゆうちょ銀行　908支店（キュウゼロハチ）<br>普通預金　2405573</td></tr>
+    <tr><th>口座名</th><td>聖徳院観音講（セイトクインカンノンコウ）</td></tr>
+  </table>
+  <p class="small">お振込みは申込用紙にご記入のお名前（施主名・郵送先氏名・代表者名）でお願いいたします。振込手数料・現金書留の郵送料はご負担願います。銀行発行の振込明細書をもって領収書に代えさせていただきます。</p>
+
+  <p class="warn"><strong>ご注意</strong>　当院がメール・SNS・電話などで振込先口座の変更をご案内することはありません。不審な連絡があった場合は、お振込み前に下記の電話番号までご確認ください。</p>
+
+  <h2 class="mincho">お問い合わせ・所在地</h2>
+  <dl class="contact">
+    <dt>お電話</dt><dd><a class="tel" href="tel:0144582427">0144-58-2427</a></dd>
+    <dt>メール</dt><dd><a href="mailto:seitokuin@gmail.com">seitokuin@gmail.com</a><br><span class="small">ホームページのサーバーに障害が起きている間も届くよう、このページではGmailのアドレスをご案内しています（通常のお問い合わせ先 utonai@seitokuin.or.jp と同じく聖徳院のアドレスです）。</span></dd>
+    <dt>郵送先</dt><dd>〒059-1365<br>北海道苫小牧市字植苗153番地の6<br>宗教法人 大晃山 聖徳院</dd>
+  </dl>
+  <p class="small">お車：道央道 苫小牧東IC出口から国道36号線を千歳方面へ約1km、右側「手押し信号機」を右折（泉車両さん向かいの道路）。<br>JR沼ノ端駅北口からタクシーで約12分。</p>
+  <div class="map">
+    <iframe title="聖徳院の地図" loading="lazy"
+      src="https://www.google.com/maps?q=%E8%8B%AB%E5%B0%8F%E7%89%A7%E5%B8%82%E5%AD%97%E6%A4%8D%E8%8B%97153-6&output=embed"></iframe>
+  </div>
+  <p class="small"><a href="https://www.google.com/maps/search/?api=1&query=%E8%8B%AB%E5%B0%8F%E7%89%A7%E5%B8%82%E5%AD%97%E6%A4%8D%E8%8B%97153-6">Googleマップで開く</a></p>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Instagram：<a href="https://www.instagram.com/seitokuin.hokkaido/">@seitokuin.hokkaido</a>　Facebook：<a href="https://www.facebook.com/seitokuin">seitokuin</a></p>
+    <p>© 金峯山修験本宗 大晃山 聖徳院</p>
+  </div>
+</footer>
+</body>
+</html>
