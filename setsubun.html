@@ -191,7 +191,8 @@ input.locked{opacity:.6}
       '<h3>'+(i===1?'1件目（代表者）':i+'件目')+'</h3>'+
       (i===1?'<p class="small" style="margin:0 0 8px">お札は、代表者の住所へまとめてお送りします。振込もこの方のお名前でお願いします。</p>':'')+
       '<div class="grid">'+
-        '<div class="full"><label class="f">希望祈願</label><input type="text" data-k="kigan" list="kiganList" placeholder="例：厄除け"></div>'+
+        '<div class="full"><label class="f">希望祈願（自由にご記入ください）</label><input type="text" data-k="kigan" autocomplete="off" placeholder="ご希望の祈願をご記入ください">'+
+        '<p class="small" style="margin:4px 0 0">例：厄除け、家内安全、商売繁盛、交通安全、身体壮健、心願成就、闘病平穏、合格祈願など</p></div>'+
         '<div><label class="f">祈願札（枚）</label><input type="text" inputmode="numeric" data-k="fuda" placeholder="0"></div>'+
         '<div><label class="f">トイレのお札（枚）</label><input type="text" inputmode="numeric" data-k="toi" placeholder="0"></div>'+
         '<div class="full"><label class="f">ふりがな</label><input type="text" data-k="furi" placeholder="やまだ はなこ"></div>'+
@@ -311,9 +312,5 @@ input.locked{opacity:.6}
   });
 })();
 </script>
-<datalist id="kiganList">
-  <option value="厄除け"><option value="家内安全"><option value="商売繁盛"><option value="交通安全">
-  <option value="身体壮健"><option value="心願成就"><option value="闘病平穏"><option value="合格祈願">
-</datalist>
 </body>
 </html>
