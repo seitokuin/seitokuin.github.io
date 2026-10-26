@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>節分・厄除け祈願 星祭り申込書（入力して印刷）｜大晃山 聖徳院</title>
+<style>
+:root{
+  --ai:#22375a; --shu:#a8202a; --asagi:#e3edf0; --paper:#fbfbf9;
+  --ink:#1f2328; --sub:#5a6170; --line:#c9d3da; --card:#ffffff; --field:#eef5ff;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --ai:#9db6dc; --shu:#e0646b; --asagi:#1c2733; --paper:#12171d;
+    --ink:#e7e9ec; --sub:#a4abb6; --line:#34404d; --card:#18202a; --field:#1d2a3a; }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo","Noto Sans JP",sans-serif;
+  font-size:16px;line-height:1.75}
+.mincho{font-family:"Hiragino Mincho ProN","Yu Mincho","YuMincho","Noto Serif JP",serif}
+a{color:var(--ai)}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px}
+header{border-top:6px solid var(--shu);background:var(--card);border-bottom:1px solid var(--line)}
+header .wrap{padding:18px 16px}
+header p{margin:0;font-size:13px;color:var(--sub)}
+h1{font-size:22px;margin:4px 0 0;color:var(--ai);letter-spacing:.06em}
+h2{font-size:18px;color:var(--ai);margin:28px 0 10px;padding-bottom:4px;border-bottom:2px solid var(--ai)}
+.choice{display:grid;gap:10px;margin:18px 0}
+@media (min-width:600px){.choice{grid-template-columns:1fr 1fr}}
+.choice a,.btn{display:block;text-align:center;padding:14px 12px;border-radius:8px;font-weight:700;text-decoration:none;border:2px solid var(--ai);cursor:pointer;font-size:16px;font-family:inherit}
+.choice a.main,.btn.main{background:var(--ai);color:var(--paper)}
+.choice a.sub,.btn.sub{background:var(--card);color:var(--ai)}
+.choice small{display:block;font-weight:400;font-size:12px;opacity:.85}
+.note{background:var(--asagi);border-left:5px solid var(--shu);padding:12px 14px;font-size:14px;margin:12px 0}
+.note p{margin:0 0 4px}
+.price{font-size:14px;color:var(--sub);margin:6px 0 0}
+.person{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px;margin:0 0 14px}
+.person h3{margin:0 0 8px;font-size:16px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.person h3 label{font-size:13px;font-weight:400;color:var(--sub);display:flex;align-items:center;gap:4px}
+.grid{display:grid;gap:8px 10px;grid-template-columns:1fr 1fr}
+.full{grid-column:1/-1}
+label.f{display:block;font-size:13px;color:var(--sub)}
+input[type=text],input[type=tel],input[type=number],select{width:100%;font-size:16px;padding:8px 10px;border:1px solid var(--line);border-radius:6px;background:var(--field);color:var(--ink);font-family:inherit}
+.row3{display:grid;grid-template-columns:1.2fr 1fr .8fr .8fr;gap:6px}
+.copy{font-size:13px;color:var(--sub);display:flex;align-items:center;gap:6px;margin-top:4px}
+.totals{background:var(--card);border:2px solid var(--ai);border-radius:8px;padding:12px 14px}
+.totals table{width:100%;border-collapse:collapse}
+.totals td{padding:4px 2px;border-bottom:1px solid var(--line)}
+.totals td.n{text-align:right;font-weight:700}
+.totals tr:last-child td{border-bottom:0;font-size:18px}
+.pay label{display:flex;align-items:center;gap:8px;padding:8px 10px;border:1px solid var(--line);border-radius:6px;margin-bottom:6px;background:var(--card)}
+.actions{display:grid;gap:10px;margin:22px 0 10px}
+.small{font-size:13px;color:var(--sub)}
+.addbtn{background:none;border:1px dashed var(--ai);color:var(--ai);width:100%;padding:10px;border-radius:8px;font-size:15px;cursor:pointer;font-family:inherit}
+footer{margin:30px 0 40px;font-size:13px;color:var(--sub)}
+#printArea{display:none}
+
+/* ===== 印刷用（申込書の形） ===== */
+@page{size:A4 landscape;margin:18mm 10mm 8mm}
+@media print{
+  :root{color-scheme:light}
+  body{background:#fff;color:#000;font-size:9pt;line-height:1.35}
+  header,main,footer{display:none !important}
+  #printArea{display:block}
+  .p-title{border:1.2pt solid #000;display:flex;align-items:center;justify-content:center;gap:12mm;padding:2.5mm}
+  .p-title h1{font-size:16pt;margin:0;color:#000;letter-spacing:.08em}
+  .p-title .pr{font-size:9pt;line-height:1.5}
+  .p-title .pr span{display:inline-block;width:24mm}
+  table.p{width:100%;border-collapse:collapse;margin-top:3mm;table-layout:fixed}
+  table.p th,table.p td{border:.8pt solid #000;padding:1.2mm 1.5mm;vertical-align:top;font-size:8.5pt}
+  table.p th{text-align:center;font-weight:400;font-size:8.5pt}
+  table.p td{height:19mm}
+  .furi{font-size:7pt;border-bottom:.5pt dotted #000;padding-bottom:.6mm;margin-bottom:1mm;min-height:3.5mm}
+  .nm{font-size:12pt}
+  .rep{font-size:7pt;float:right}
+  .num{text-align:right;white-space:nowrap}
+  .p-foot{display:flex;justify-content:space-between;gap:6mm;margin-top:3mm;font-size:8pt;line-height:1.55}
+  .p-foot p{margin:0}
+  table.t{border-collapse:collapse;font-size:9pt;min-width:72mm}
+  table.t td,table.t th{border:.8pt solid #000;padding:1.2mm 2mm}
+  table.t th{font-weight:400}
+  table.t td.n{text-align:right;min-width:20mm}
+}
+label.copy.indiv{font-weight:700;color:var(--ai)}
+label.copy.same{display:block;background:var(--asagi);padding:8px 10px;border-radius:6px;color:var(--ink);font-size:14px}
+label.copy.same span{display:block;font-size:12px;color:var(--sub);margin-left:22px}
+input.locked{opacity:.6}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <p>大晃山 聖徳院</p>
+    <h1 class="mincho">節分・厄除け祈願　星祭り申込書</h1>
+    <p class="price">年間祈願料　一願 5,500円　／　トイレのお札（烏枢沙摩明王）　一願 1,000円</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="choice">
+    <a class="main" href="#form">入力して印刷する<small>スマホ・パソコンで入力。金額は自動で計算されます</small></a>
+    <a class="sub" href="setsubun.pdf" download>白紙の用紙を印刷する<small>手書き用の申込書（PDF）</small></a>
+  </div>
+
+  <div class="note">
+    <p>入力した内容は、この端末の中だけで使われ、どこにも送信されません。<strong>入力しただけでは申込みは完了しません。</strong>印刷してご郵送いただくか、お寺へお持ちください。</p>
+    <p>Facebook などのアプリの中で開いていて印刷できない場合は、画面の「…」などから Safari・Chrome で開き直してください。</p>
+  </div>
+
+  <h2 id="form">お申込み内容（5件まで）</h2>
+  <p class="small">1件目には代表者の方をご記入ください。同じ方が別の祈願もされる場合は、件を分けてご記入ください。お札は代表者の住所へまとめてお送りします。別の住所へ送ってほしいお札は、その件の「個別に郵送を希望」にチェックを入れてください。<br>6件以上の場合は、分けてお申し込みください。生年月日は和暦でご記入ください。</p>
+
+  <div id="persons"></div>
+  <button type="button" class="addbtn" id="addBtn">＋ お申込みを追加</button>
+
+  <h2>申込金額合計</h2>
+  <div class="totals">
+    <table>
+      <tr><td>祈願札</td><td class="n" id="tFudaCnt">0枚</td><td class="n" id="tFudaYen">0円</td></tr>
+      <tr><td>トイレのお札</td><td class="n" id="tToiCnt">0枚</td><td class="n" id="tToiYen">0円</td></tr>
+      <tr><td>合計</td><td class="n" id="tAllCnt">0枚</td><td class="n" id="tAllYen">0円</td></tr>
+    </table>
+  </div>
+
+  <h2>お支払い方法</h2>
+  <div class="pay">
+    <label><input type="radio" name="pay" value="現金書留"> 現金書留（申込書と代金を同封）</label>
+    <label><input type="radio" name="pay" value="お寺に直接持参"> お寺に直接持参</label>
+    <label><input type="radio" name="pay" value="申込書を郵送し、代金は口座に振込"> 申込書を郵送し、代金は口座に振込</label>
+  </div>
+  <p class="small">振込口座：ゆうちょ銀行　記号19000　番号24055731　口座名：聖徳院観音講（セイトクインカンノンコウ）<br>他行から：ゆうちょ銀行　908支店　普通預金2405573<br>お振込みは代表者のお名前でお願いいたします。</p>
+
+  <div class="actions">
+    <button type="button" class="btn main" id="printBtn">申込書の形で印刷する</button>
+    <button type="button" class="btn sub" id="clearBtn">入力をすべて消す</button>
+  </div>
+  <p class="small">印刷の画面で「PDFとして保存」を選ぶと、PDFに保存することもできます。プリンターがない場合は、保存したPDFをコンビニのネットプリントで印刷できます。</p>
+
+  <footer>
+    <p>送付先：〒059-1365　北海道苫小牧市字植苗153番地の6　大晃山 聖徳院<br>お問い合わせ：0144-58-2427</p>
+    <p><a href="./">← ご案内ページに戻る</a></p>
+  </footer>
+</main>
+
+<!-- 印刷用の申込書（画面には表示されません） -->
+<div id="printArea">
+  <div class="p-title">
+    <h1 class="mincho">節分、厄除け祈願　星祭り申込書</h1>
+    <div class="pr">（<span>年間祈願料</span>一願　5,500円）<br>（<span>トイレのお札</span>一願　1,000円）</div>
+  </div>
+  <table class="p">
+    <colgroup><col style="width:15%"><col style="width:7%"><col style="width:7%"><col style="width:20%"><col style="width:15%"><col style="width:24%"><col style="width:12%"></colgroup>
+    <thead><tr><th>希望祈願</th><th>祈願札</th><th>トイレ<br>のお札</th><th>ふりがな<br>氏　名</th><th>生年月日</th><th>住　所</th><th>電話番号</th></tr></thead>
+    <tbody id="pRows"></tbody>
+  </table>
+  <div class="p-foot">
+    <div>
+      <p>【希望祈願例】厄除け、家内安全、商売繁盛、交通安全、身体壮健、心願成就、闘病平穏、合格祈願など</p>
+      <p>※ お札は代表者（1件目）の住所へまとめてお送りします。個別郵送を希望の件には「個別郵送希望」と表示しています。</p>
+      <p>支払方法：<strong id="pPay">（未選択）</strong></p>
+      <p>振込口座　ゆうちょ銀行　記号19000　番号24055731　口座名　聖徳院観音講《セイトクインカンノンコウ》<br>
+      　　　　　他行から送金の場合　ゆうちょ銀行　908支店　普通預金2405573</p>
+      <p>送付先　〒059-1365　北海道苫小牧市字植苗153番地の6　大晃山 聖徳院　／　お問い合わせ　0144-58-2427</p>
+    </div>
+    <table class="t">
+      <tr><th colspan="3">申込金額合計</th></tr>
+      <tr><td>祈願札</td><td class="n" id="pFudaCnt"></td><td class="n" id="pFudaYen"></td></tr>
+      <tr><td>トイレ</td><td class="n" id="pToiCnt"></td><td class="n" id="pToiYen"></td></tr>
+      <tr><td>合　計</td><td class="n" id="pAllCnt"></td><td class="n" id="pAllYen"></td></tr>
+    </table>
+  </div>
+</div>
+
+<script>
+(function(){
+  var MAX=5, FUDA=5500, TOI=1000, KEY='seitokuin-setsubun-draft';
+  var wrap=document.getElementById('persons');
+  var count=0;
+  var ERAS=['','令和','平成','昭和','大正'];
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function num(v){v=String(v||'').replace(/[０-９]/g,function(s){return String.fromCharCode(s.charCodeAt(0)-0xFEE0);}).replace(/[^0-9]/g,'');return v?Number(v):0;}
+  function fm(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,',');}
+
+  function personHTML(i){
+    var eraOpts=ERAS.map(function(e){return '<option value="'+e+'">'+(e||'元号')+'</option>';}).join('');
+    return '<div class="person" data-i="'+i+'">'+
+      '<h3>'+(i===1?'1件目（代表者）':i+'件目')+'</h3>'+
+      (i===1?'<p class="small" style="margin:0 0 8px">お札は、代表者の住所へまとめてお送りします。振込もこの方のお名前でお願いします。</p>':'')+
+      '<div class="grid">'+
+        '<div class="full"><label class="f">希望祈願</label><input type="text" data-k="kigan" list="kiganList" placeholder="例：厄除け"></div>'+
+        '<div><label class="f">祈願札（枚）</label><input type="text" inputmode="numeric" data-k="fuda" placeholder="0"></div>'+
+        '<div><label class="f">トイレのお札（枚）</label><input type="text" inputmode="numeric" data-k="toi" placeholder="0"></div>'+
+        '<div class="full"><label class="f">ふりがな</label><input type="text" data-k="furi" placeholder="やまだ はなこ"></div>'+
+        '<div class="full"><label class="f">氏名（お札に記載します）</label><input type="text" data-k="name" placeholder="山田 花子"></div>'+
+        '<div class="full"><label class="f">生年月日（和暦）</label><div class="row3">'+
+          '<select data-k="era">'+eraOpts+'</select>'+
+          '<input type="text" inputmode="numeric" data-k="y" placeholder="年">'+
+          '<input type="text" inputmode="numeric" data-k="m" placeholder="月">'+
+          '<input type="text" inputmode="numeric" data-k="d" placeholder="日">'+
+        '</div></div>'+
+        '<div><label class="f">年齢（歳）</label><input type="text" inputmode="numeric" data-k="age" placeholder="歳"></div>'+
+        (i>1?'<div class="full"><label class="copy same"><input type="checkbox" data-copy> 住所・電話番号は1件目（代表者）と同じ<br><span>チェックすると、代表者の住所・電話番号が自動で入ります（入力を省略できます）</span></label></div>':'')+
+        '<div><label class="f">郵便番号</label><input type="text" inputmode="numeric" data-k="zip" placeholder="000-0000"></div>'+
+        '<div class="full"><label class="f">住所</label><input type="text" data-k="addr" placeholder="都道府県から"></div>'+
+
+        '<div class="full"><label class="f">電話番号</label><input type="tel" data-k="tel" placeholder="000-0000-0000"></div>'+
+        (i>1?'<div class="full"><label class="copy indiv"><input type="checkbox" data-indiv> この件のお札は、この住所へ個別に郵送を希望</label></div>':'')+
+      '</div></div>';
+  }
+  function add(){
+    if(count>=MAX) return;
+    count++;
+    wrap.insertAdjacentHTML('beforeend',personHTML(count));
+    document.getElementById('addBtn').style.display=count>=MAX?'none':'block';
+  }
+  function data(){
+    var list=[];
+    wrap.querySelectorAll('.person').forEach(function(p){
+      var o={};
+      p.querySelectorAll('[data-k]').forEach(function(el){o[el.getAttribute('data-k')]=el.value;});
+      var c=p.querySelector('[data-copy]'); o.copy=c?c.checked:false;
+      var v=p.querySelector('[data-indiv]'); o.indiv=v?v.checked:false;
+      list.push(o);
+    });
+    var pay=document.querySelector('input[name=pay]:checked');
+    return {list:list,pay:pay?pay.value:''};
+  }
+  function applyCopy(){
+    var first=wrap.querySelector('.person');
+    if(!first) return;
+    wrap.querySelectorAll('.person').forEach(function(p){
+      var c=p.querySelector('[data-copy]');
+      if(!c) return;
+      ['zip','addr','tel'].forEach(function(k){
+        var el=p.querySelector('[data-k='+k+']');
+        if(c.checked){ el.value=first.querySelector('[data-k='+k+']').value; el.readOnly=true; el.classList.add('locked'); }
+        else { el.readOnly=false; el.classList.remove('locked'); }
+      });
+    });
+  }
+  function calc(){
+    var d=data(), f=0, t=0;
+    d.list.forEach(function(o){f+=num(o.fuda);t+=num(o.toi);});
+    var set=function(id,v){document.getElementById(id).textContent=v;};
+    set('tFudaCnt',f+'枚'); set('tFudaYen',fm(f*FUDA)+'円');
+    set('tToiCnt',t+'枚'); set('tToiYen',fm(t*TOI)+'円');
+    set('tAllCnt',(f+t)+'枚'); set('tAllYen',fm(f*FUDA+t*TOI)+'円');
+    return {f:f,t:t};
+  }
+  function save(){
+    try{localStorage.setItem(KEY,JSON.stringify(data()));}catch(e){}
+  }
+  function load(){
+    var d=null;
+    try{d=JSON.parse(localStorage.getItem(KEY)||'null');}catch(e){}
+    var n=d&&d.list?Math.max(1,Math.min(MAX,d.list.length)):1;
+    for(var i=0;i<n;i++) add();
+    if(!d) return;
+    var ps=wrap.querySelectorAll('.person');
+    d.list.forEach(function(o,i){
+      var p=ps[i]; if(!p) return;
+      Object.keys(o).forEach(function(k){var el=p.querySelector('[data-k='+k+']'); if(el) el.value=o[k];});
+      var c=p.querySelector('[data-copy]'); if(c) c.checked=!!o.copy;
+      var v=p.querySelector('[data-indiv]'); if(v) v.checked=!!o.indiv;
+    });
+    if(d.pay){var q=document.querySelector('input[name=pay][value="'+d.pay+'"]'); if(q) q.checked=true;}
+  }
+  function buildPrint(){
+    applyCopy();
+    var d=data(), c=calc(), rows='';
+    for(var i=0;i<MAX;i++){
+      var o=d.list[i]||{};
+      var birth=(o.era||o.y||o.m||o.d)?
+        esc(o.era||'')+' '+esc(o.y||'')+'年 '+esc(o.m||'')+'月 '+esc(o.d||'')+'日生'+(o.age?'<br>（'+esc(o.age)+'歳）':''):
+        '大・昭・平・令<br>　年　月　日生<br>（　　歳）';
+      rows+='<tr>'+
+        '<td>'+esc(o.kigan||'')+'</td>'+
+        '<td class="num">'+(o.fuda?esc(o.fuda):'')+' 枚</td>'+
+        '<td class="num">'+(o.toi?esc(o.toi):'')+' 枚</td>'+
+        '<td>'+(i===0?'<span class="rep">★代表者</span>':(o.indiv?'<span class="rep">個別郵送希望</span>':''))+'<div class="furi">'+esc(o.furi||'')+'</div><div class="nm">'+esc(o.name||'')+'</div></td>'+
+        '<td>'+birth+'</td>'+
+        '<td>'+(i>0&&o.indiv?'<strong>【この住所へ個別郵送】</strong><br>':'')+'〒'+esc(o.zip||'')+'<br>'+esc(o.addr||'')+'</td>'+
+        '<td>'+esc(o.tel||'')+'</td>'+
+      '</tr>';
+    }
+    document.getElementById('pRows').innerHTML=rows;
+    document.getElementById('pPay').textContent=d.pay||'（未選択）';
+    var s=function(id,v){document.getElementById(id).textContent=v;};
+    s('pFudaCnt',c.f+' 枚'); s('pFudaYen',fm(c.f*FUDA)+' 円');
+    s('pToiCnt',c.t+' 枚'); s('pToiYen',fm(c.t*TOI)+' 円');
+    s('pAllCnt',(c.f+c.t)+' 枚'); s('pAllYen',fm(c.f*FUDA+c.t*TOI)+' 円');
+  }
+
+  load(); applyCopy(); calc();
+  document.addEventListener('input',function(){applyCopy();calc();save();});
+  document.addEventListener('change',function(){applyCopy();calc();save();});
+  document.getElementById('addBtn').addEventListener('click',function(){add();save();});
+  document.getElementById('printBtn').addEventListener('click',function(){
+    buildPrint();
+    try{window.print();}catch(e){alert('この画面では印刷できません。Safari や Chrome で開き直してください。');}
+  });
+  window.addEventListener('beforeprint',buildPrint);
+  document.getElementById('clearBtn').addEventListener('click',function(){
+    if(!confirm('入力した内容をすべて消しますか？')) return;
+    try{localStorage.removeItem(KEY);}catch(e){}
+    location.reload();
+  });
+})();
+</script>
+<datalist id="kiganList">
+  <option value="厄除け"><option value="家内安全"><option value="商売繁盛"><option value="交通安全">
+  <option value="身体壮健"><option value="心願成就"><option value="闘病平穏"><option value="合格祈願">
+</datalist>
+</body>
+</html>
